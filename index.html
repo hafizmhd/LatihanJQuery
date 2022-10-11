@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Latihan JQuery</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    </head>
+
+    <body>
+
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <!-- h1 untuk menampilkan angka -->
+            <h1 class="text-center"></h1>
+
+            <!-- Buat tombol -->
+            <button type="button" class="btn btn-primary" id="btn-plus">Tekan!</button>
+            <span><button type="button" class="btn btn-primary" id="btn-reset">Reset!</button></span>
+        </div>
+
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+        <!-- Script -->
+        <script>
+            // Ketika HTML sudah di-load
+            $(document).ready(function () {
+                var num = 1;
+
+                // Ketika tombol "Tekan!" ditekan
+                $("#btn-plus").on("click", function() {
+
+                    //Tampilkan pada h1 dan tambah variabel num
+                    $("h1").html(num++);
+                });
+
+                // Ketika tombol "Reset!" ditekan
+                $("#btn-reset").on("click", function() {
+                    $("h1").empty();
+
+                    // Nilai num dikembalikan menjadi 1
+                    num = 1;
+                });
+            });
+        </script>
+
+    </body>
+</html>
